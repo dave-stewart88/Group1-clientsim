@@ -1,3 +1,9 @@
+'''
+Group 1
+Luke Hamill (Main), Colm Mckeever, David Stewart, Kerry O'Hagen, Krishna Sreejesh
+Created 08/03/2022
+File for getting a list of the authorities for each eatery
+'''
 import json
 import pandas as pd
 import io
@@ -8,7 +14,7 @@ from requests.structures import CaseInsensitiveDict
 
 def main():
     auths = getAllAuthorities()
-    auths.to_csv('authorities-list.csv')
+    auths.to_csv('./authorities/authorities-list.csv')
     urls = auths.FileName.values
     print(urls)
     for u in urls:
@@ -16,7 +22,6 @@ def main():
         base = os.path.splitext(filename)[0]
         filename = base + '.json'
         print(filename)
-
 
 def getAllAuthorities():
     url = "https://api.ratings.food.gov.uk/Authorities"

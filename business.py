@@ -1,3 +1,9 @@
+'''
+Group 1
+Luke Hamill (Main), Colm Mckeever, David Stewart, Kerry O'Hagen, Krishna Sreejesh
+Created 08/03/2022
+File for getting data from the Food Standards API and saving that data to a CSV for future work
+'''
 import json
 import pandas as pd
 import io
@@ -8,7 +14,11 @@ from requests.structures import CaseInsensitiveDict
 
 def main():
     auths = getAllBusinessNames()
-    auths.to_csv('./food-hygiene-data/belfast-all.csv')
+    try:
+        auths.to_csv('./food-hygiene-data/belfast-all.csv')
+    except:
+        print("File is already open elsewhere")
+
     businessNames = auths.BusinessName.values
     ratings= auths.RatingValue.values
     print(businessNames, ratings)
