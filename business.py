@@ -8,14 +8,14 @@ from requests.structures import CaseInsensitiveDict
 
 def main():
     auths = getAllBusinessNames()
-    auths.to_csv('business-list.csv')
+    auths.to_csv('./food-hygiene-data/belfast-all.csv')
     businessNames = auths.BusinessName.values
     ratings= auths.RatingValue.values
     print(businessNames, ratings)
 
 
 def getAllBusinessNames():
-    url = "https://api.ratings.food.gov.uk/establishments?ratingKey=5&localAuthorityId=138"
+    url = "https://api.ratings.food.gov.uk/establishments?localAuthorityId=138"
     headers = CaseInsensitiveDict()
     headers["Accept"] = "*/*"
     headers["x-api-version"] = "2"
