@@ -43,8 +43,6 @@
    <body>
      <header>
        <main>
-
-
    <!-- Background image -->
     <div
      class="img-responsive"
@@ -62,24 +60,35 @@
      <main>
 
         <div class="px-4 py-3 my-2 text-center">
+             <!-- icon -->
             <img class="w3-circle" src="https://pic.onlinewebfonts.com/svg/img_415179.png" alt="icon" width=100px height=100px/>
-            <!-- <img  src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
             <h1 class="display-6 fw-bold text-success">Are you hangry?</h1>
           </div>
+
+
         <form method="post" action="{{url_for('hello')}}">
             <div class="col-md-6 mx-auto text-center">
                 <label for="postCode" class="form-label fw-bold fs-5">Enter your postcode</label>
-
-                <!-- <p class="lead mb-2">Could you please tell me your name?</p> -->
+                <p>(e.g. BT9)</p>
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center align-items-center my-1">
                     <input type="text" class="form-control" id="postCode" name="postCode" style="max-width: 256px;">
                   </div>
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center my-2">
                   <button type="submit" class="btn btn-success btn-lg px-4 gap-3">Feed me</button>
                 </div>
-                
+
                 <div class="px-4 py-3 my-2 text-center">
-                    <img class="w3-circle" src="https://www.food.gov.uk/sites/default/files/styles/promo_large/public/media/image/food-hygiene-Rating%205_a_preview.jpeg?itok=ao2_ogm4" alt="icon" width=300 height=200/>
+                    <img class="w3-round" src="https://www.food.gov.uk/sites/default/files/styles/promo_large/public/media/image/food-hygiene-Rating%205_a_preview.jpeg?itok=ao2_ogm4" alt="icon" width=300 height=200/>
                 </div>
         </div>
+
+    <footer class="bg-light text-center text-lg-start">
+     <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2020 Copyright:
+            <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+     <!-- Copyright -->
+   </footer>
+
 </html>
