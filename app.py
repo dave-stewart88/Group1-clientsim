@@ -20,15 +20,25 @@ def hello():
     data = pd.read_csv(file, header=0, usecols=['BusinessName','PostCode', 'BusinessType','RatingValue'])
     data.set_index = (['BusinessName'])
     data.index.name = None
+    d=[""]
+
+    # postCode = request.form.get('postCode')
     # print(type(data))
     # business = data.loc[data.BusinessName]
     # rating = data.loc[data.RatingValue]
-    test1 = data.loc[(data.BusinessType == 'Retailers - other') & (data.RatingValue == '5')]
-    # print(business)
+    # print(data.PostCode[0])
+    # for e in data.PostCode:
+    #     d += str(e).split()
+    #print(d[1][0],d[1][1],d[1][2])
+    information = data.loc[(data.RatingValue == '5')&(data['PostCode'].str.contains('BT9'))]
+    print(type(information))
+
+    print(information.to_html(classes=['BusinessName, RatingValue']))
+
     # print(rating)
     if name:
         print('Request for hello page received with name=%s' % name)
-        return render_template('hello.html', name=name, tables=[test1.to_html(classes=['BusinessName, RatingValue'])],
+        return render_template('hello.html', name=name, tables=[information.to_html(classes=['table table-dark'],index=False,columns=['BusinessName','PostCode','RatingValue'],justify='left')],
                                data=['na','Rating Table'])
     else:
         print('Request for hello page received with no name or blank name -- redirecting')
