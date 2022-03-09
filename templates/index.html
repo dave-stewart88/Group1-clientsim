@@ -4,40 +4,39 @@
     <title>Hangry - Food delivery service</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
 <!--navigation bar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-success">
-<div class="container-fluid">
-  <a class="navbar-brand" href="{{url_for('index')}}">Home</a>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Links</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          5 star rating
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="https://www.scoresonthedoors.org.uk/">What are they?</a></li>
-            <li><a class="dropdown-item" href="https://hygienecheck.net/">How to obtain?</a></li>
-            <li><hr class="dropdown-divider"></li>
-          < li><a class="dropdown-item" href="https://www.food.gov.uk/">Food Standard Agency</a></li>
-          </ul>
-    </ul>
-    <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-  </div>
-</div>
-</nav>
-  </head
-
+	<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+		<div class="container-fluid">
+		  <a class="navbar-brand" href="{{url_for('index')}}">Home</a>
+		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			  <li class="nav-item">
+				<a class="nav-link active" aria-current="page" href="#">About</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link active" href="#">Links</a>
+			  </li>
+			  <li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				  5 star rating
+				  </a>
+				  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<li><a class="dropdown-item" href="https://www.scoresonthedoors.org.uk/">What are they?</a></li>
+					<li><a class="dropdown-item" href="https://hygienecheck.net/">How to obtain?</a></li>
+					<li><hr class="dropdown-divider"></li>
+				  < li><a class="dropdown-item" href="https://www.food.gov.uk/">Food Standard Agency</a></li>
+				  </ul>
+			</ul>
+			<form class="d-flex">
+			  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+			  <button class="btn btn-outline-success" type="submit">Search</button>
+			</form>
+		  </div>
+		</div>
+	</nav>
+</head>
 
 <html>
    <body>
@@ -65,23 +64,24 @@
             <h1 class="display-6 fw-bold text-success">Are you hangry?</h1>
           </div>
 
+		<div>
+			<form method="post" action="{{url_for('hello')}}">
+				<div class="col-md-6 mx-auto text-center">
+					<label for="postCode" class="form-label fw-bold fs-5">Enter your postcode</label>
+					<p>(e.g. BT9)</p>
+					<div class="d-grid gap-2 d-sm-flex justify-content-sm-center align-items-center my-1">
+						<input type="text" class="form-control" id="postCode" name="postCode" style="max-width: 256px;">
+					  </div>
+					<div class="d-grid gap-2 d-sm-flex justify-content-sm-center my-2">
+					  <button type="submit" class="btn btn-success btn-lg px-4 gap-3">Feed me</button>
+					</div>
 
-        <form method="post" action="{{url_for('hello')}}">
-            <div class="col-md-6 mx-auto text-center">
-                <label for="postCode" class="form-label fw-bold fs-5">Enter your postcode</label>
-                <p>(e.g. BT9)</p>
-                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center align-items-center my-1">
-                    <input type="text" class="form-control" id="postCode" name="postCode" style="max-width: 256px;">
-                  </div>
-                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center my-2">
-                  <button type="submit" class="btn btn-success btn-lg px-4 gap-3">Feed me</button>
-                </div>
-
-                <div class="px-4 py-3 my-2 text-center">
-                    <img class="w3-round" src="https://www.food.gov.uk/sites/default/files/styles/promo_large/public/media/image/food-hygiene-Rating%205_a_preview.jpeg?itok=ao2_ogm4" alt="icon" width=300 height=200/>
-                </div>
-        </div>
-
+					<div class="px-4 py-3 my-2 text-center">
+						<img class="w3-round" src="https://www.food.gov.uk/sites/default/files/styles/promo_large/public/media/image/food-hygiene-Rating%205_a_preview.jpeg?itok=ao2_ogm4" alt="icon" width=300 height=200/>
+					</div>
+				</div>
+			</form>
+		</div
     <footer class="bg-light text-center text-lg-start">
      <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
@@ -90,5 +90,4 @@
         </div>
      <!-- Copyright -->
    </footer>
-
 </html>
