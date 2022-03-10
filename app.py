@@ -24,7 +24,7 @@ def hello():
     information = data.loc[(data.RatingValue == '5')&(data['PostCode'].str.contains(postCode))]
     print(type(information))
 
-    print(information.to_html(classes=['BusinessName, RatingValue']))
+    print(information.to_html(classes=['table table-dark']))
 
     # print(rating)
     if postCode:
