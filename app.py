@@ -29,8 +29,8 @@ def hello():
     # print(rating)
     if postCode:
         print('Request for hello page received with Post Code=%s' % postCode)
-        return render_template('hello.html', tables=[information.to_html(classes=['table table-dark'],index=False,columns=['BusinessName','PostCode','RatingValue'],justify='left')],
-                               data=['na','Rating Table'])
+        return render_template('hello.html', tables=[information.to_html(classes=['table table-hover'],index=False,columns=['BusinessName','PostCode','RatingValue'],justify='left')],
+                               data=['na'])
     else:
         print('Request for hello page received with no name or blank name -- redirecting')
         return redirect(url_for('index'))
